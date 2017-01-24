@@ -5,6 +5,7 @@ module.exports = function (environment) {
         modulePrefix: 'shipping-status',
         environment: environment,
         rootURL: '/',
+        host: '',
         locationType: 'auto',
         contentSecurityPolicy: {
             'default-src': "'none'",
@@ -15,7 +16,8 @@ module.exports = function (environment) {
             'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com",
             'media-src': "'self'"
         },
-        'ember-cli-mirage': {},
+        'ember-cli-mirage': {
+        },
         EmberENV: {
             FEATURES: {
                 // Here you can enable experimental features on an ember canary build
@@ -40,8 +42,8 @@ module.exports = function (environment) {
         // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
         // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-        ENV['ember-cli-mirage']['enabled'] = true;
         ENV.host = 'http://127.0.0.1:8080';
+        ENV['ember-cli-mirage']['enabled'] = true;
     }
 
     if (environment === 'test') {

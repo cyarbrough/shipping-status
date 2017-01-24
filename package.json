@@ -36,6 +36,7 @@
     "ember-cli-uglify": "^1.2.0",
     "ember-composability": "0.3.7",
     "ember-data": "^2.10.0",
+    "ember-data-hal-9000": "0.3.2",
     "ember-export-application-global": "^1.0.5",
     "ember-font-awesome": "2.2.0",
     "ember-load-initializers": "^0.5.1",
