@@ -7,11 +7,12 @@
     <th>Shipment Date</th>
     <th>Shipped To</th>
     <th>Received</th>
+    <th>More</th>
 </tr>
 </thead>
 <tbody>
 {{#each sortedItems as |item|}}
-    <tr>
+    <tr class="{{item.classNamesInformation}}">
         <td class="status">
             {{item.currentStatus.code}}
         </td>
@@ -26,6 +27,17 @@
         </td>
         <td class="date">
             {{format-date item.receivedDate 'DD / MM / YYYY'}}
+        </td>
+        <td class="show-more" {{action 'toggleShowHistory' item}}>
+            +
+        </td>
+    </tr>
+    <tr class="{{item.classNamesHistory}}">
+        <td colspan="6">
+            <div class="shipping-container" id="{{item.shippingHistoryId}}">
+                {{!shipment-history historyItems=item.sortedFullHistory}}
+                test
+            </div>
         </td>
     </tr>
 {{/each}}
