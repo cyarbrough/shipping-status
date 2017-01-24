@@ -9,10 +9,6 @@ export default Ember.Component.extend({
     filterBy: 'shippingReferenceId',
     filterValue: null,
 
-    /**
-     * Filtered items; Will return all items if no filter
-     * @var {*}
-     */
     filteredItems: Ember.computed('items', 'filterBy', 'filterValue', function () {
         var items = this.get('items'),
             filterBy = this.get('filterBy'),
@@ -27,4 +23,7 @@ export default Ember.Component.extend({
             return regEx.test(item.get(filterBy).toLowerCase());
         });
     }),
+
+    sortedItems: Ember.computed.sort('filteredItems', 'sortedItemsSort'),
+    sortedItemsSort: ['shipDate:desc'],
 });
