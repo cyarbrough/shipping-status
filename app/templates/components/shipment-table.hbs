@@ -1,4 +1,5 @@
 {{!yield}}
+{{filterValue}}
 <thead>
 <tr>
     <th>Status</th>
@@ -18,13 +19,13 @@
             {{item.shippingReferenceId}}
         </td>
         <td class="date">
-            {{format-date item.shipDate 'MM / DD / YYYY'}}
+            {{format-date item.shipDate 'DD / MM / YYYY'}}
         </td>
         <td class="addressee">
             {{item.receivingAddress.addressee}}
         </td>
         <td class="date">
-            {{format-date item.receivedDate 'MM / DD / YYYY'}}
+            {{format-date item.receivedDate 'DD / MM / YYYY'}}
         </td>
     </tr>
 {{/each}}
