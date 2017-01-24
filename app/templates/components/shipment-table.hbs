@@ -3,13 +3,29 @@
 <tr>
     <th>Status</th>
     <th>Shipment id</th>
-    <th>Shipment id</th>
+    <th>Shipment Date</th>
     <th>Shipped To</th>
     <th>Received</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-    <th>Status 1</th>
-</tr>
+{{#each items as |item|}}
+    <tr>
+        <td class="status">
+            {{item.currentStatus.code}}
+        </td>
+        <td class="reference">
+            {{item.shippingReferenceId}}
+        </td>
+        <td class="date">
+            {{format-date item.shipDate 'MM / DD / YYYY'}}
+        </td>
+        <td class="addressee">
+            {{item.receivingAddress.addressee}}
+        </td>
+        <td class="date">
+            {{format-date item.receivedDate 'MM / DD / YYYY'}}
+        </td>
+    </tr>
+{{/each}}
 </tbody>
