@@ -44,6 +44,10 @@ export default DS.Model.extend({
         return classes;
     }),
 
+    sortedFullHistory: Ember.computed('fullHistory', function () {
+        return this.get('fullHistory');
+    }),
+
     shippingHistoryId: Ember.computed(function () {
         return 'shippingHistory' + this.get('id');
     }),

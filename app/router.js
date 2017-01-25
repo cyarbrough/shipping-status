@@ -7,7 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('shipping-information', {path: '/'});
+  this.route('shipping-information', {path: '/'}, function() {
+    this.route('status',  {path: '/status/:status_id'});
+  });
+  this.route('shipping-status', {path: '/single-status/:status_id'});
 });
 
 export default Router;

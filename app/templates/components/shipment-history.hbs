@@ -1,0 +1,17 @@
+<thead>
+<tr>
+    <th class="code">Code</th>
+    <th class="description">Description</th>
+    <th class="date">Date</th>
+</tr>
+</thead>
+
+<tbody>
+{{#each historyItems as |item|}}
+    <tr>
+        <td class="code">{{#link-to 'shipping-information.status' item.id}}{{item.code}}{{/link-to}}</td>
+        <td class="description">{{item.description}}</td>
+        <td class="date">{{format-date item.shipDate 'MM / DD / YYYY'}}</td>
+    </tr>
+{{/each}}
+</tbody>
